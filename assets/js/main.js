@@ -52,9 +52,66 @@ var listaTareas = document.querySelectorAll("li")
 
 
 setTimeout(() => {
-    titulo.innerText = "Estructuras de Control Repetitivas y Objetos"
-    parrafos[1].innerText = "Bienvenidos al curso Fullstack Javascript 0086"
-    listaTareas[1].innerText = "Modelar el sistema"
+    try {
+        titulo.innerText = "Estructuras de Control Repetitivas y Objetos"
+        parrafos[1].innerText = "Bienvenidos al curso Fullstack Javascript 0086"
+        listaTareas[1].innerText = "Modelar el sistema"
+    } catch (e) {
+        console.log("Error detallado", e);
+        alert("Ocurrió un error, intente más tarde")
+    }
+    
 }, 5000);
+
+
+var tbody = document.querySelector("#tabla-personas tbody")
+
+// ciclo FOR
+// for (var index = 0; index < personas.length; index++) {
+//     tbody.innerHTML += `
+//         <tr>
+//             <td>${personas[index].rut}</td>
+//             <td>${personas[index].nombre}</td>
+//             <td>${personas[index].apellido}</td>
+//             <td>${personas[index].edad}</td>
+//             <td>${personas[index].activo}</td>
+//         </tr>`
+// }
+
+
+
+//Ciclo For IN
+// for (const item in personas) {
+//     tbody.innerHTML += `
+//         <tr>
+//             <td>${personas[item].rut}</td>
+//             <td>${personas[item].nombre}</td>
+//             <td>${personas[item].apellido}</td>
+//             <td>${personas[item].edad}</td>
+//             <td>${personas[item].activo}</td>
+//         </tr>`
+// }
+
+
+//Ciclo For OF
+for (const item of personas) {
+    tbody.innerHTML += `
+        <tr>
+            <td>${item.rut}</td>
+            <td>${item.nombre}</td>
+            <td>${item.apellido}</td>
+            <td>${item.edad}</td>
+            <td>${item.activo}</td>
+        </tr>`
+}
+
+
+for (const key in persona1) {
+    console.log(key);
+}
+
+
+
+
 
 
