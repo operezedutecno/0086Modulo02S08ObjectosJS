@@ -58,7 +58,7 @@ setTimeout(() => {
         listaTareas[1].innerText = "Modelar el sistema"
     } catch (e) {
         console.log("Error detallado", e);
-        alert("Ocurrió un error, intente más tarde")
+        // alert("Ocurrió un error, intente más tarde")
     }
     
 }, 5000);
@@ -94,21 +94,53 @@ var tbody = document.querySelector("#tabla-personas tbody")
 
 
 //Ciclo For OF
-for (const item of personas) {
+// for (const item of personas) {
+//     tbody.innerHTML += `
+//         <tr>
+//             <td>${item.rut}</td>
+//             <td>${item.nombre}</td>
+//             <td>${item.apellido}</td>
+//             <td>${item.edad}</td>
+//             <td>${item.activo}</td>
+//         </tr>`
+// }
+
+
+do {
+    var cantidad = prompt("¿Cuántas personas desea visualizar?")
+
+    if(isNaN(cantidad)) {
+        alert("Por favor ingresar un valor numérico")
+    } else if(cantidad < 1 || cantidad > personas.length) {
+        alert("Por favor ingresar un valor entre 1 y "+personas.length)
+    }
+} while (isNaN(cantidad) || (cantidad < 1 || cantidad > personas.length));
+
+// Ciclo While
+var index = 0;
+while (index < cantidad) {
     tbody.innerHTML += `
         <tr>
-            <td>${item.rut}</td>
-            <td>${item.nombre}</td>
-            <td>${item.apellido}</td>
-            <td>${item.edad}</td>
-            <td>${item.activo}</td>
-        </tr>`
+            <td>${personas[index].rut}</td>
+            <td>${personas[index].nombre}</td>
+            <td>${personas[index].apellido}</td>
+            <td>${personas[index].edad}</td>
+            <td>${personas[index].activo}</td>
+        </tr>
+    `
+    index = index + 1;
 }
 
 
-for (const key in persona1) {
-    console.log(key);
-}
+
+
+
+
+
+
+// for (const key in persona1) {
+//     console.log(key);
+// }
 
 
 
